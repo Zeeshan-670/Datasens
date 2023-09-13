@@ -35,7 +35,7 @@
               <!-- Info List -->
               <ul class="list-style-one light">
                 <li>
-                  <i class="fa fa-phone"></i> <a href="#">(+92) 3252849282</a>
+                  <!-- <i class="fa fa-phone"></i> <a href="#">(+92) 3252849282</a> -->
                 </li>
                 <li>
                   <i class="fa fa-envelope"></i>
@@ -132,13 +132,13 @@
               <!--Keep This Empty / Menu will come through Javascript-->
             </ul>
             <ul class="contact-list-one">
-              <li>
+              <!-- <li>
                 <i class="icon lnr-icon-phone-handset"></i>
                 <span class="title">Call Now</span>
                 <div class="text">
                   <a href="tel:+923252849282">(+92) 325-2849282</a>
                 </div>
-              </li>
+              </li> -->
               <li>
                 <i class="icon lnr-icon-envelope1"></i>
                 <span class="title">Send Email</span>
@@ -257,13 +257,13 @@
           </div>
 
           <ul class="contact-list-one">
-            <li>
+            <!-- <li>
               <i class="icon lnr-icon-phone-handset"></i>
               <span class="title">Call Now</span>
               <div class="text">
                 <a href="tel:+923252849282">(+92) 325-2849282</a>
               </div>
-            </li>
+            </li> -->
             <li>
               <i class="icon lnr-icon-envelope1"></i>
               <span class="title">Send Email</span>
@@ -606,7 +606,7 @@
                   <div class="content">
                     <i class="icon flaticon-diamond-2"></i>
                     <div class="count-box">
-                      <span class="count-text" data-speed="3000" data-stop="60"
+                      <span class="count-text" data-speed="3000" data-stop="100"
                         >0</span
                       >+
                     </div>
@@ -624,7 +624,7 @@
                   <div class="content">
                     <i class="icon flaticon-love-planet"></i>
                     <div class="count-box">
-                      <span class="count-text" data-speed="3000" data-stop="55"
+                      <span class="count-text" data-speed="3000" data-stop="85"
                         >0</span
                       >+
                     </div>
@@ -642,7 +642,7 @@
                   <div class="content">
                     <i class="icon flaticon-title"></i>
                     <div class="count-box">
-                      <span class="count-text" data-speed="3000" data-stop="50"
+                      <span class="count-text" data-speed="3000" data-stop="80"
                         >0</span
                       >+
                     </div>
@@ -745,7 +745,7 @@
       <!--End Clients Section -->
 
       <!-- Team Section twelve-->
-      <section class="team-section-twelve pt-0">
+      <section class="team-section-twelve pt-5">
         <div class="auto-container">
           <div class="sec-title">
             <span class="sub-title">EXPERT MEMBERS</span>
@@ -876,8 +876,9 @@
                     <div class="text">
                       Get in touch with our dedicated team.<br />
                     </div>
-                    <a href="#" class="info-btn"
-                      ><i class="icon fa fa-phone"></i> +92 3252849282</a
+                    <a href="mailto:datasensagency@gmail.com" class="info-btn"
+                      ><i class="icon lnr-icon-envelope1"></i>
+                      datasensagency@gmail.com</a
                     >
                   </div>
                 </div>
@@ -1286,13 +1287,7 @@
                 <h2>Feel free to write</h2>
               </div>
               <!-- Contact Form -->
-              <form
-                id="contact_form"
-                name="contact_form"
-                class=""
-                action="https://kodesolution.com/html/2023/digicod-html/includes/sendmail.php"
-                method="post"
-              >
+              <form id="contact-form" name="contact_form">
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="mb-3">
@@ -1363,7 +1358,7 @@
                     <div class="text">
                       <h6>Have any question?</h6>
                       <a href="tel:980089850"
-                        ><span>Free</span> +92 3252849282</a
+                        ><span></span> +(92) 325 2849 282</a
                       >
                     </div>
                   </li>
@@ -1549,6 +1544,25 @@
 
           document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth',
+          });
+        });
+      });
+
+      $(document).ready(function () {
+        $('#contact-form').submit(function (e) {
+          e.preventDefault();
+          $.ajax({
+            type: 'POST',
+            url: 'contact.php', // Adjust the URL to the actual path
+            data: $(this).serialize(),
+            success: function (response) {
+              var data = JSON.parse(response);
+              $('#result').html(data.message);
+              if (data.status === 'success') {
+                // Clear form inputs on success
+                $('#name, #email, #message').val('');
+              }
+            },
           });
         });
       });
