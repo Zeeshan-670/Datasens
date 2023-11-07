@@ -407,6 +407,7 @@ div.tableCard {
 .fullHeader {
   display: flex;
   gap: 30px;
+  margin-bottom: 10px;
 }
 h3.tableHead {
   color: #0c74db;
