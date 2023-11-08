@@ -105,7 +105,7 @@
                   <th>Phone</th>
                   <th>Nationality</th>
                 </thead>
-                <tbody class="mt-5">
+                <tbody class="mt-5" id="tableBody">
                   <tr></tr>
                 </tbody>
               </table>
@@ -155,11 +155,9 @@
 
             if (response.length === 0) {
               // If the response is empty, display a message in the center of the table
-              var noDataRow = table.insertRow(0);
-              var noDataCell = noDataRow.insertCell(0);
-              noDataCell.textContent = 'No data found';
-              noDataCell.colSpan = 6; // Set colspan to cover all columns
-              noDataCell.style.textAlign = 'center'; // Center the message
+
+              document.getElementById('tableBody').innerHTML =
+                "<tr> <td  colspan='6' class='text-center' style='border-bottom: none;'> No data found!</td></tr>";
             } else {
               // Loop through the response and create table rows
               for (var i = 0; i < response.length; i++) {
