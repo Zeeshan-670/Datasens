@@ -100,9 +100,10 @@
                 <thead class="mb-5 pb-5">
                   <th>S.No</th>
                   <th>Name</th>
-                  <th>DOB</th>
+                  <th>Position / Job Title</th>
                   <th>Email</th>
                   <th>Phone</th>
+                  <th>DOB</th>
                   <th>Nationality</th>
                 </thead>
                 <tbody class="mt-5" id="tableBody">
@@ -172,9 +173,9 @@
                 nameCell.textContent = response[i].name;
                 nameCell.setAttribute('data-label', 'Name');
 
-                var dobCell = row.insertCell(2);
-                dobCell.textContent = response[i].date_of_birth;
-                dobCell.setAttribute('data-label', 'DOB');
+                var positionCell = row.insertCell(2);
+                positionCell.textContent = response[i].position;
+                positionCell.setAttribute('data-label', 'Position / Job Title');
 
                 var emailCell = row.insertCell(3);
                 emailCell.textContent = response[i].email;
@@ -184,7 +185,11 @@
                 phoneCell.textContent = response[i].phone;
                 phoneCell.setAttribute('data-label', 'Phone');
 
-                var nationalityCell = row.insertCell(5);
+                var dobCell = row.insertCell(5);
+                dobCell.textContent = response[i].date_of_birth;
+                dobCell.setAttribute('data-label', 'DOB');
+
+                var nationalityCell = row.insertCell(6);
                 nationalityCell.textContent = response[i].nationality;
                 nationalityCell.setAttribute('data-label', 'Nationality');
               }
