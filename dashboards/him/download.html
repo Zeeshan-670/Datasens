@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .app-btn {
+        width: 45%;
+        max-width: 160px;
+        color: #fff;
+        margin: 20px 10px;
+        text-align: left;
+        border-radius: 5px;
+        text-decoration: none;
+        font-family: 'Lucida Grande', sans-serif;
+        font-size: 10px;
+        text-transform: uppercase;
+      }
+
+      .app-btn.blu {
+        background-color: #0055a3;
+        transition: background-color 0.25s linear;
+      }
+
+      .app-btn.blu:hover {
+        background-color: #02396c;
+      }
+
+      .app-btn i {
+        width: 20%;
+        text-align: center;
+        font-size: 28px;
+        margin-right: 7px;
+      }
+
+      .app-btn .big-txt {
+        font-size: 17px;
+        text-transform: capitalize;
+      }
+    </style>
+
+    <title>HiM || Download Our App</title>
+  </head>
+  <body>
+    <div
+      class="d-flex justify-content-center align-items-center w-100"
+      style="height: 100vh; background: #fff5"
+    >
+      <div class="flex social-btns w-100" style="flex-direction: column">
+        <a
+          class="app-btn blu flex vert py-1"
+          href="./assets/app/app-release.apk"
+          download=""
+        >
+          <i class="fa fa-apple"></i>
+          <p class="mb-0">
+            Available on the <br />
+            <span class="big-txt">App Store</span>
+          </p>
+        </a>
+
+        <a
+          class="app-btn blu flex vert py-1"
+          href="./assets/app/app-release.apk"
+          download=""
+        >
+          <i class="fa fa-play"></i>
+          <p class="mb-0">
+            Get it on <br />
+            <span class="big-txt">Google Play</span>
+          </p>
+        </a>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
